@@ -1,0 +1,84 @@
+﻿@using DeBankUI.Components;
+@using LiveChartsCore.SkiaSharpView.Blazor
+@page "/michal/reward-pools"
+@inherits BaseChartComponent
+
+<MudGrid>
+    <MudItem xs="6">
+        <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudStack Justify="Justify.SpaceAround" Row=true>
+                        <MudText Typo="Typo.h6">Total Reward Pools</MudText>
+                    </MudStack>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent style="height:600px">
+                <DeBankUI.Shared.Michal.RewardPoolsTotalChart>
+
+                </DeBankUI.Shared.Michal.RewardPoolsTotalChart>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton Class="rounded-0" Variant="Variant.Outlined" OnClick="DownloadChartData" Color="Color.Primary">Get data</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+    <MudItem xs="6">
+         <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudStack Justify="Justify.SpaceAround" Row=true>
+                        <MudText Typo="Typo.h6">Daily Reward Pools</MudText>
+                    </MudStack>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent style="height:600px">
+                <DeBankUI.Shared.Michal.RewardPoolsDailyChart>
+
+                </DeBankUI.Shared.Michal.RewardPoolsDailyChart>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton Class="rounded-0" Variant="Variant.Outlined" OnClick="DownloadChartData" Color="Color.Primary">Get data</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+     <MudItem xs="6">
+         <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+             <MudCardHeader>
+                 <CardHeaderContent>
+                     <MudStack Justify="Justify.SpaceAround" Row=true>
+                         <MudText Typo="Typo.h6">Reward Pools distribution</MudText>
+                     </MudStack>
+                 </CardHeaderContent>
+             </MudCardHeader>
+             <MudCardContent style="height:600px">
+                 <DeBankUI.Shared.Michal.RewardPoolsHistogram>
+
+                 </DeBankUI.Shared.Michal.RewardPoolsHistogram>
+             </MudCardContent>
+             <MudCardActions>
+                 <MudButton Class="rounded-0" Variant="Variant.Outlined" OnClick="DownloadChartData" Color="Color.Primary">Get data</MudButton>
+             </MudCardActions>
+         </MudCard>
+     </MudItem>
+     <MudItem xs="6">
+         <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+             <MudCardHeader>
+                 <CardHeaderContent>
+                     <MudStack Justify="Justify.SpaceAround" Row=true>
+                         <MudText Typo="Typo.h6">Reward Pools earnings distribution</MudText>
+                     </MudStack>
+                 </CardHeaderContent>
+             </MudCardHeader>
+             <MudCardContent style="height:600px">
+                 <DeBankUI.Shared.Michal.RewardPoolsEarnersHistogram>
+
+                 </DeBankUI.Shared.Michal.RewardPoolsEarnersHistogram>
+             </MudCardContent>
+             <MudCardActions>
+                 <MudButton Class="rounded-0" Variant="Variant.Outlined" OnClick="DownloadChartData" Color="Color.Primary">Get data</MudButton>
+             </MudCardActions>
+         </MudCard>
+     </MudItem>
+</MudGrid>
+

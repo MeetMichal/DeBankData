@@ -1,0 +1,13 @@
+﻿@using DeBankUI.Components;
+@using LiveChartsCore.SkiaSharpView.Blazor
+@inherits BaseChartComponent
+
+<CartesianChart 
+                TooltipPosition="LiveChartsCore.Measure.TooltipPosition.Hidden"
+                YAxes="@YAxes"
+                XAxes="@XAxes"
+                EasingFunction="null"
+                DrawMarginFrame="@DrawMarginFrame"
+                Series="@Series">
+
+</CartesianChart>

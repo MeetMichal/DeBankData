@@ -1,0 +1,46 @@
+﻿@using DeBankUI.Components;
+@using DeBankUI.Shared.Michal
+@using LiveChartsCore.SkiaSharpView.Blazor
+@page "/michal/debank-users"
+
+
+<MudGrid>
+    <MudItem xs="6">
+        <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+             <MudCardHeader>
+                 <CardHeaderContent>
+                     <MudStack Justify="Justify.SpaceAround" Row=true>
+                         <MudText Typo="Typo.h6">Web3 ID minters and L2 registrations</MudText>
+                     </MudStack>
+                 </CardHeaderContent>
+             </MudCardHeader>
+             <MudCardContent style="height:600px">
+                 <Web3RegistrationsChart>
+
+                 </Web3RegistrationsChart>
+             </MudCardContent>
+             <MudCardActions>
+                 <MudButton Class="rounded-0" Variant="Variant.Outlined" OnClick="DownloadChartData" Color="Color.Primary">Get data</MudButton>
+             </MudCardActions>
+         </MudCard>
+     </MudItem>
+     <MudItem xs="6">
+         <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+             <MudCardHeader>
+                 <CardHeaderContent>
+                     <MudStack Justify="Justify.SpaceAround" Row=true>
+                         <MudText Typo="Typo.h6">Official Profiles registrations</MudText>
+                     </MudStack>
+                 </CardHeaderContent>
+             </MudCardHeader>
+             <MudCardContent style="height:600px">
+                 <OfficialProfileRegistrationsChart>
+
+                 </OfficialProfileRegistrationsChart>
+             </MudCardContent>
+             <MudCardActions>
+                 <MudButton Class="rounded-0" Variant="Variant.Outlined" OnClick="DownloadChartData" Color="Color.Primary">Get data</MudButton>
+             </MudCardActions>
+         </MudCard>
+     </MudItem>
+ </MudGrid>
