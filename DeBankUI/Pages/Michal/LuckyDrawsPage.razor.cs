@@ -7,14 +7,26 @@ using static MudBlazor.Colors;
 using SkiaSharp;
 using DeBankUI.Utils;
 using DeBankUI.Components;
+using Blazor.DownloadFileFast.Interfaces;
+using Microsoft.AspNetCore.Components;
+using DeBankUI.Shared.Michal;
 
 namespace DeBankUI.Pages.Michal
 {
     public partial class LuckyDrawsPage
     {
-        public void DownloadChartData()
-        {
+        [Inject]
+        public IBlazorDownloadFileService BlazorDownloadFileService { get; set; }
 
+        private LuckyDrawsTotalChart luckyDrawsTotalChart;
+        private LuckyDrawsDailyChart luckyDrawsDailyChart;
+        private LuckyDrawsHistogram luckyDrawsHistogram;
+        private LuckyDrawsWinnersHistogram luckyDrawsWinnersHistogram;
+
+        public async Task DownloadChartData(BaseChartComponent baseComponent, string title)
+        {
+            var data = baseComponent.DownloadChartData();
+            await BlazorDownloadFileService.DownloadFileAsync(title, data);
         }
     }
 }

@@ -15,12 +15,12 @@
                  </CardHeaderContent>
              </MudCardHeader>
              <MudCardContent style="height:600px">
-                 <Web3RegistrationsChart>
+                 <Web3RegistrationsChart @ref="web3RegistrationsChart">
 
                  </Web3RegistrationsChart>
              </MudCardContent>
              <MudCardActions>
-                 <MudButton Class="rounded-0" Variant="Variant.Outlined" OnClick="DownloadChartData" Color="Color.Primary">Get data</MudButton>
+                 <MudButton StartIcon="@Icons.Material.Filled.FileDownload" Class="rounded-0" Variant="Variant.Outlined" OnClick="@(async () => await DownloadChartData(web3RegistrationsChart, "Web3RegistrationsChart.csv"))" Color="Color.Primary">Get data</MudButton>
              </MudCardActions>
          </MudCard>
      </MudItem>
@@ -34,12 +34,12 @@
                  </CardHeaderContent>
              </MudCardHeader>
              <MudCardContent style="height:600px">
-                 <OfficialProfileRegistrationsChart>
+                 <OfficialProfileRegistrationsChart @ref="officialProfileRegistrationsChart">
 
                  </OfficialProfileRegistrationsChart>
              </MudCardContent>
              <MudCardActions>
-                 <MudButton Class="rounded-0" Variant="Variant.Outlined" OnClick="DownloadChartData" Color="Color.Primary">Get data</MudButton>
+                 <MudButton StartIcon="@Icons.Material.Filled.FileDownload" Class="rounded-0" Variant="Variant.Outlined" OnClick="@(async () => await DownloadChartData(officialProfileRegistrationsChart, "OfficialProfilesChart.csv"))" Color="Color.Primary">Get data</MudButton>
              </MudCardActions>
          </MudCard>
      </MudItem>

@@ -13,12 +13,12 @@
                 </CardHeaderContent>
             </MudCardHeader>
             <MudCardContent style="height:600px">
-                <DeBankUI.Shared.Michal.LuckyDrawsTotalChart>
+                 <DeBankUI.Shared.Michal.LuckyDrawsTotalChart @ref="luckyDrawsTotalChart">
 
                 </DeBankUI.Shared.Michal.LuckyDrawsTotalChart>
             </MudCardContent>
             <MudCardActions>
-                <MudButton Class="rounded-0" Variant="Variant.Outlined" OnClick="DownloadChartData" Color="Color.Primary">Get data</MudButton>
+                 <MudButton StartIcon="@Icons.Material.Filled.FileDownload" Class="rounded-0" Variant="Variant.Outlined" OnClick="@(async () => await DownloadChartData(luckyDrawsTotalChart, "TotalLuckyDrawsChart.csv"))" Color="Color.Primary">Get data</MudButton>
             </MudCardActions>
         </MudCard>
     </MudItem>
@@ -32,12 +32,12 @@
                 </CardHeaderContent>
             </MudCardHeader>
             <MudCardContent style="height:600px">
-                 <DeBankUI.Shared.Michal.LuckyDrawsDailyChart>
+                 <DeBankUI.Shared.Michal.LuckyDrawsDailyChart @ref="luckyDrawsDailyChart">
 
                 </DeBankUI.Shared.Michal.LuckyDrawsDailyChart>
             </MudCardContent>
             <MudCardActions>
-                <MudButton Class="rounded-0" Variant="Variant.Outlined" OnClick="DownloadChartData" Color="Color.Primary">Get data</MudButton>
+                 <MudButton StartIcon="@Icons.Material.Filled.FileDownload" Class="rounded-0" Variant="Variant.Outlined" OnClick="@(async () => await DownloadChartData(luckyDrawsDailyChart, "DailyLuckyDrawsChart.csv"))" Color="Color.Primary">Get data</MudButton>
             </MudCardActions>
         </MudCard>
     </MudItem>
@@ -51,12 +51,12 @@
                  </CardHeaderContent>
              </MudCardHeader>
              <MudCardContent style="height:600px">
-                 <DeBankUI.Shared.Michal.LuckyDrawsHistogram>
+                 <DeBankUI.Shared.Michal.LuckyDrawsHistogram @ref="luckyDrawsHistogram">
 
                  </DeBankUI.Shared.Michal.LuckyDrawsHistogram>
              </MudCardContent>
              <MudCardActions>
-                 <MudButton Class="rounded-0" Variant="Variant.Outlined" OnClick="DownloadChartData" Color="Color.Primary">Get data</MudButton>
+                 <MudButton StartIcon="@Icons.Material.Filled.FileDownload" Class="rounded-0" Variant="Variant.Outlined" OnClick="@(async () => await DownloadChartData(luckyDrawsHistogram, "LuckyDrawsHistogram.csv"))" Color="Color.Primary">Get data</MudButton>
              </MudCardActions>
          </MudCard>
      </MudItem>
@@ -70,12 +70,12 @@
                  </CardHeaderContent>
              </MudCardHeader>
              <MudCardContent style="height:600px">
-                 <DeBankUI.Shared.Michal.LuckyDrawsWinnersHistogram>
+                 <DeBankUI.Shared.Michal.LuckyDrawsWinnersHistogram @ref="luckyDrawsWinnersHistogram">
 
                  </DeBankUI.Shared.Michal.LuckyDrawsWinnersHistogram>
              </MudCardContent>
              <MudCardActions>
-                 <MudButton Class="rounded-0" Variant="Variant.Outlined" OnClick="DownloadChartData" Color="Color.Primary">Get data</MudButton>
+                 <MudButton StartIcon="@Icons.Material.Filled.FileDownload" Class="rounded-0" Variant="Variant.Outlined" OnClick="@(async () => await DownloadChartData(luckyDrawsWinnersHistogram, "LuckyDrawsWinnersHistogram.csv"))" Color="Color.Primary">Get data</MudButton>
              </MudCardActions>
          </MudCard>
      </MudItem>

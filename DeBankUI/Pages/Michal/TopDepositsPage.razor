@@ -1,0 +1,143 @@
+﻿@using DeBankUI.Components;
+@using LiveChartsCore.SkiaSharpView.Blazor
+@page "/michal/top-deposits"
+
+<MudGrid>
+    <MudItem xs="12">
+        <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudStack Justify="Justify.SpaceAround" Row=true>
+                        <MudText Typo="Typo.h6">TOP Reward Pool depositors</MudText>
+                    </MudStack>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent>
+                 <MudSimpleTable Style="overflow-x: auto;">
+                     <thead>
+                         <tr>
+                             @foreach (var h in headings)
+                            {
+                                <th>@h</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var row in rewardPoolsTop10Total)
+                        {
+                            <tr>
+                                @foreach (var x in row.Split())
+                                {
+                                    <td>@x</td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </MudSimpleTable>
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+    <MudItem xs="12">
+        <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+             <MudCardHeader>
+                 <CardHeaderContent>
+                     <MudStack Justify="Justify.SpaceAround" Row=true>
+                         <MudText Typo="Typo.h6">Last month TOP Reward Pool depositors [2023-10-15 - 2023-11-15]</MudText>
+                     </MudStack>
+                 </CardHeaderContent>
+             </MudCardHeader>
+             <MudCardContent>
+                 <MudSimpleTable Style="overflow-x: auto;">
+                     <thead>
+                         <tr>
+                             @foreach (var h in headings)
+                            {
+                                <th>@h</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var row in rewardPoolsTop10LastMonth)
+                        {
+                            <tr>
+                                @foreach (var x in row.Split())
+                                {
+                                    <td>@x</td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </MudSimpleTable>
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+    <MudItem xs="12">
+        <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+             <MudCardHeader>
+                 <CardHeaderContent>
+                     <MudStack Justify="Justify.SpaceAround" Row=true>
+                         <MudText Typo="Typo.h6">TOP Lucky Draw depositors</MudText>
+                     </MudStack>
+                 </CardHeaderContent>
+             </MudCardHeader>
+             <MudCardContent>
+                 <MudSimpleTable Style="overflow-x: auto;">
+                     <thead>
+                         <tr>
+                             @foreach (var h in headings)
+                            {
+                                <th>@h</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var row in luckyDrawsTop10Total)
+                        {
+                            <tr>
+                                @foreach (var x in row.Split())
+                                {
+                                    <td>@x</td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </MudSimpleTable>
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+    <MudItem xs="12">
+        <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+             <MudCardHeader>
+                 <CardHeaderContent>
+                     <MudStack Justify="Justify.SpaceAround" Row=true>
+                         <MudText Typo="Typo.h6">Last month TOP Lucky Draw depositors [2023-10-15 - 2023-11-15]</MudText>
+                     </MudStack>
+                 </CardHeaderContent>
+             </MudCardHeader>
+             <MudCardContent>
+                 <MudSimpleTable Style="overflow-x: auto;">
+                     <thead>
+                         <tr>
+                             @foreach (var h in headings)
+                            {
+                                <th>@h</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var row in luckyDrawsTop10LastMonth)
+                        {
+                            <tr>
+                                @foreach (var x in row.Split())
+                                {
+                                    <td>@x</td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </MudSimpleTable>
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+</MudGrid>
+
