@@ -5,22 +5,44 @@
 
 
 <MudGrid>
+    <MudItem xs="12">    
+        <AboutMichal />
+    </MudItem>
     <MudItem xs="6">
         <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
              <MudCardHeader>
                  <CardHeaderContent>
                      <MudStack Justify="Justify.SpaceAround" Row=true>
-                         <MudText Typo="Typo.h6">Web3 ID minters and L2 registrations</MudText>
+                         <MudText Typo="Typo.h6">Web3 ID minters</MudText>
                      </MudStack>
                  </CardHeaderContent>
              </MudCardHeader>
              <MudCardContent style="height:600px">
-                 <Web3RegistrationsChart @ref="web3RegistrationsChart">
+                 <Web3IdMintersChart @ref="web3RegistrationsChart">
 
-                 </Web3RegistrationsChart>
+                 </Web3IdMintersChart>
              </MudCardContent>
              <MudCardActions>
-                 <MudButton StartIcon="@Icons.Material.Filled.FileDownload" Class="rounded-0" Variant="Variant.Outlined" OnClick="@(async () => await DownloadChartData(web3RegistrationsChart, "Web3RegistrationsChart.csv"))" Color="Color.Primary">Get data</MudButton>
+                 <MudButton StartIcon="@Icons.Material.Filled.FileDownload" Class="rounded-0" Variant="Variant.Outlined" OnClick="@(async () => await DownloadChartData(web3RegistrationsChart, "Web3IdMIntersChart.csv"))" Color="Color.Primary">Get data</MudButton>
+             </MudCardActions>
+         </MudCard>
+     </MudItem>
+     <MudItem xs="6">
+         <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+             <MudCardHeader>
+                 <CardHeaderContent>
+                     <MudStack Justify="Justify.SpaceAround" Row=true>
+                         <MudText Typo="Typo.h6">L2 registrations</MudText>
+                     </MudStack>
+                 </CardHeaderContent>
+             </MudCardHeader>
+             <MudCardContent style="height:600px">
+                 <L2RegistrationsChart @ref="l2RegistrationsChart">
+
+                 </L2RegistrationsChart>
+             </MudCardContent>
+             <MudCardActions>
+                 <MudButton StartIcon="@Icons.Material.Filled.FileDownload" Class="rounded-0" Variant="Variant.Outlined" OnClick="@(async () => await DownloadChartData(web3RegistrationsChart, "L2RegistrationsChart.csv"))" Color="Color.Primary">Get data</MudButton>
              </MudCardActions>
          </MudCard>
      </MudItem>

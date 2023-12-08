@@ -1,0 +1,30 @@
+﻿@using DeBankUI.Components;
+@using DeBankUI.Shared.Michal
+@using LiveChartsCore.SkiaSharpView.Blazor
+@page "/michal/other-data"
+
+
+<MudGrid>
+    <MudItem xs="12">    
+        <AboutMichal />
+    </MudItem>
+    <MudItem xs="12">
+        <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+             <MudCardHeader>
+                 <CardHeaderContent>
+                     <MudStack Justify="Justify.SpaceAround" Row=true>
+                         <MudText Typo="Typo.h6">DeBank combined data</MudText>
+                     </MudStack>
+                 </CardHeaderContent>
+             </MudCardHeader>
+             <MudCardContent style="height:600px">
+                 <CombinedDataChart @ref="combinedDataChart">
+
+                 </CombinedDataChart>
+             </MudCardContent>
+             <MudCardActions>
+                 <MudButton StartIcon="@Icons.Material.Filled.FileDownload" Class="rounded-0" Variant="Variant.Outlined" OnClick="@(async () => await DownloadChartData(combinedDataChart, "CombinedChart.csv"))" Color="Color.Primary">Get data</MudButton>
+             </MudCardActions>
+         </MudCard>
+     </MudItem>
+ </MudGrid>

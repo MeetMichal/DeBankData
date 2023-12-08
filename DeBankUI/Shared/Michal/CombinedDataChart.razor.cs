@@ -12,16 +12,33 @@ using System.Globalization;
 
 namespace DeBankUI.Shared.Michal
 {
-    public partial class StreamActivityTotalChart : BaseChartComponent
+    public partial class CombinedDataChart : BaseChartComponent
     {
         private static readonly SKColor black = SKColors.Black;
-        public List<DateTimePoint> PostsSerieValues { get; set; }
-        public List<DateTimePoint> AuthorsSerieValues { get; set; }
+        public List<DateTimePoint> L2SerieValues { get; set; }
+        public List<DateTimePoint> Web3IdSerieValues { get; set; }
+        public List<DateTimePoint> OfficialProfiesValues { get; set; }
 
-        public StreamActivityTotalChart()
+        public void L2SerieVisibilityChanged(bool val)
         {
-            PostsSerieValues = MichalData.GetTotalPostsAmountData();
-            AuthorsSerieValues = MichalData.GetTotalAuthorsAmountData();
+            Series[0].IsVisible = val;
+        }
+
+        public void Web3SerieVisibilityChanged(bool val)
+        {
+            Series[1].IsVisible = val;
+        }
+
+        public void OfficialProfiesSerieVisibilityChanged(bool val)
+        {
+            Series[2].IsVisible = val;
+        }
+
+        public CombinedDataChart()
+        {
+            L2SerieValues = MichalData.GetL2RegistrationsData();
+            Web3IdSerieValues = MichalData.GetWeb3MintersAmountData();
+            OfficialProfiesValues = MichalData.GetOfficialProfilesAmountData();
 
             XAxes = new[]
             {
@@ -35,26 +52,12 @@ namespace DeBankUI.Shared.Michal
             };
 
             YAxes = new[]
-            {
+                {
                 new Axis
                 {
-                    Name = "Total number of posts",
                     NamePaint = new SolidColorPaint(Colors.SerieBlue),
-                    LabelsPaint = new SolidColorPaint(Colors.SerieBlue),
-                    TicksPaint = new SolidColorPaint(Colors.SerieBlue),
-                    SubticksPaint = new SolidColorPaint(Colors.SerieBlue),
-                    MaxLimit = PostsSerieValues.MaxBy(v => v.Value.Value).Value.Value * 1.05
-                },
-                new Axis
-                {
-                    Name = "Total number of post authors",
-                    ShowSeparatorLines = false,
-                    Position = LiveChartsCore.Measure.AxisPosition.End,
-                    NamePaint = new SolidColorPaint(Colors.SerieRed),
-                    LabelsPaint = new SolidColorPaint(Colors.SerieRed),
-                    TicksPaint = new SolidColorPaint(Colors.SerieRed),
-                    SubticksPaint = new SolidColorPaint(Colors.SerieRed),
-                    MaxLimit = AuthorsSerieValues.MaxBy(v => v.Value.Value).Value.Value * 1.05
+                    TicksPaint = new SolidColorPaint(black),
+                    LabelsPaint = new SolidColorPaint(black),
                 },
             };
 
@@ -62,7 +65,6 @@ namespace DeBankUI.Shared.Michal
             {
                 new LineSeries<DateTimePoint>
                 {
-                    Name="Total number of posts",
                     DataPadding = new LiveChartsCore.Drawing.LvcPoint(0,0),
                     Stroke = new SolidColorPaint(Colors.SerieBlue,4),
                     GeometryStroke = null,
@@ -71,39 +73,49 @@ namespace DeBankUI.Shared.Michal
                     LineSmoothness = 1,
                     ScalesYAt = 0, // it will be scaled at the Axis[0] instance
                     ScalesXAt = 0,
-                    Values = PostsSerieValues
+                    Values = L2SerieValues,
                 },
                 new LineSeries<DateTimePoint>
                 {
-                    Name = "Total number of post authors",
                     DataPadding = new LiveChartsCore.Drawing.LvcPoint(0,0),
-                    Fill = null,
                     Stroke = new SolidColorPaint(Colors.SerieRed,4),
                     GeometryStroke = null,
                     GeometrySize = 0,
+                    Fill = null,
                     LineSmoothness = 1,
+                    ScalesYAt = 0, // it will be scaled at the Axis[0] instance
                     ScalesXAt = 0,
-                    ScalesYAt = 1, // it will be scaled at the Axis[0] instance 
-                    Values = AuthorsSerieValues
-                }
+                    Values = Web3IdSerieValues
+                },
+                new LineSeries<DateTimePoint>
+                {
+                    DataPadding = new LiveChartsCore.Drawing.LvcPoint(0,0),
+                    Stroke = new SolidColorPaint(Colors.SerieGreen,4),
+                    GeometryStroke = null,
+                    GeometrySize = 0,
+                    Fill = null,
+                    LineSmoothness = 1,
+                    ScalesYAt = 0, // it will be scaled at the Axis[0] instance
+                    ScalesXAt = 0,
+                    Values = OfficialProfiesValues
+                },
             };
         }
+
         public override byte[] DownloadChartData()
         {
-            var totalPostsSerie = Series[0].As<LineSeries<DateTimePoint>>();
-            var totalAuthorsSerie = Series[1].As<LineSeries<DateTimePoint>>();
+            var l2Serie = Series[0].As<LineSeries<DateTimePoint>>();
 
-            var dailyPostsSerieValues = totalPostsSerie.Values.ToList();
-            var dailyAuthorsSerieValues = totalAuthorsSerie.Values.ToList();
+            var l2SerieValues = l2Serie.Values.ToList();
             var records = new List<CsvData>();
 
-            for (int i = 0; i < dailyPostsSerieValues.Count(); i++)
+            for (int i = 0; i < l2SerieValues.Count(); i++)
             {
+                var dateTime = l2SerieValues[i].DateTime;
                 records.Add(new CsvData
                 {
-                    Date = dailyPostsSerieValues[i].DateTime,
-                    TotalPosts = dailyPostsSerieValues[i].Value,
-                    TotalAuthors = dailyAuthorsSerieValues[i].Value,
+                    Date = dateTime,
+                    L2Users = l2SerieValues[i].Value,
                 });
             }
 
@@ -120,8 +132,7 @@ namespace DeBankUI.Shared.Michal
         private class CsvData
         {
             public DateTime Date { get; set; }
-            public double? TotalPosts { get; set; }
-            public double? TotalAuthors { get; set; }
+            public double? L2Users { get; set; }
         }
     }
 }

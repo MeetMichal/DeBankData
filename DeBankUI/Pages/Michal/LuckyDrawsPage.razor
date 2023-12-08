@@ -1,8 +1,12 @@
 ﻿@using DeBankUI.Components;
+@using DeBankUI.Shared.Michal
 @using LiveChartsCore.SkiaSharpView.Blazor
 @page "/michal/lucky-draws"
 
 <MudGrid>
+    <MudItem xs="12">    
+        <AboutMichal />
+    </MudItem>
     <MudItem xs="6">
         <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
             <MudCardHeader>

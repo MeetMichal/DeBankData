@@ -12,15 +12,14 @@ using System.Globalization;
 
 namespace DeBankUI.Shared.Michal
 {
-    public partial class OfficialProfileRegistrationsChart : BaseChartComponent
+    public partial class Web3IdMintersChart : BaseChartComponent
     {
         private static readonly SKColor black = SKColors.Black;
         public List<DateTimePoint> MainSerieValues { get; set; }
 
-
-        public OfficialProfileRegistrationsChart()
+        public Web3IdMintersChart()
         {
-            MainSerieValues = MichalData.GetOfficialProfilesAmountData();
+            MainSerieValues = MichalData.GetWeb3MintersAmountData();
 
             XAxes = new[]
             {
@@ -34,10 +33,11 @@ namespace DeBankUI.Shared.Michal
             };
 
             YAxes = new[]
-            {
+                {
                 new Axis
                 {
-                    Name = "Number of Official Profiles",
+                    Name = "Web3 ID minters",
+                    Position = LiveChartsCore.Measure.AxisPosition.Start,
                     NamePaint = new SolidColorPaint(Colors.SerieBlue),
                     LabelsPaint = new SolidColorPaint(Colors.SerieBlue),
                     TicksPaint = new SolidColorPaint(Colors.SerieBlue),
@@ -50,31 +50,33 @@ namespace DeBankUI.Shared.Michal
             {
                 new LineSeries<DateTimePoint>
                 {
-                    Name = "Official profiles",
                     DataPadding = new LiveChartsCore.Drawing.LvcPoint(0,0),
+                    Fill = null,
                     Stroke = new SolidColorPaint(Colors.SerieBlue,4),
                     GeometryStroke = null,
                     GeometrySize = 0,
-                    Fill = null,
                     LineSmoothness = 1,
                     ScalesXAt = 0,
+                    ScalesYAt = 0, // it will be scaled at the Axis[0] instance 
                     Values = MainSerieValues
-                },
+                }
             };
         }
 
         public override byte[] DownloadChartData()
         {
-            var totalSerie = Series[0].As<LineSeries<DateTimePoint>>();
-            var totalSerieValues = totalSerie.Values.ToList();
+            var Web3IdSerie = Series[0].As<LineSeries<DateTimePoint>>();
+
+            var Web3IdSerieValues = Web3IdSerie.Values.ToList();
             var records = new List<CsvData>();
 
-            for (int i = 0; i < totalSerie.Values.Count(); i++)
+            for (int i = 0; i < Web3IdSerieValues.Count(); i++)
             {
+                var dateTime = Web3IdSerieValues[i].DateTime;
                 records.Add(new CsvData
                 {
-                    Date = totalSerieValues[i].DateTime,
-                    OfficialProfiles = totalSerieValues[i].Value,
+                    Date = dateTime,
+                    Web3Minters = Web3IdSerieValues[i].Value,
                 });
             }
 
@@ -91,7 +93,7 @@ namespace DeBankUI.Shared.Michal
         private class CsvData
         {
             public DateTime Date { get; set; }
-            public double? OfficialProfiles { get; set; }
+            public double? Web3Minters { get; set; }
         }
     }
 }

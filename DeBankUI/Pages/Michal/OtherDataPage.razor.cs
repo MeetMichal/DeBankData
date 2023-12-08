@@ -13,14 +13,12 @@ using DeBankUI.Shared.Michal;
 
 namespace DeBankUI.Pages.Michal
 {
-    public partial class DeBankUsersPage
+    public partial class OtherDataPage
     {
         [Inject]
         public IBlazorDownloadFileService BlazorDownloadFileService { get; set; }
 
-        private Web3IdMintersChart web3RegistrationsChart;
-        private L2RegistrationsChart l2RegistrationsChart;
-        private OfficialProfileRegistrationsChart officialProfileRegistrationsChart;
+        private CombinedDataChart combinedDataChart;
 
         public async Task DownloadChartData(BaseChartComponent baseComponent, string title)
         {

@@ -1,0 +1,20 @@
+﻿@using DeBankUI.Components;
+@using LiveChartsCore.SkiaSharpView.Blazor
+@inherits BaseChartComponent
+
+<MudStack  Spacing="3" Row>
+    <MudCheckBox @bind-Checked="@Series[0].IsVisible"  />
+    <MudCheckBox @bind-Checked="@Series[1].IsVisible" />
+    <MudCheckBox @bind-Checked="@Series[2].IsVisible" />
+
+</MudStack>
+
+<CartesianChart 
+                TooltipPosition="LiveChartsCore.Measure.TooltipPosition.Hidden"
+                YAxes="@YAxes"
+                XAxes="@XAxes"
+                EasingFunction="null"
+                DrawMarginFrame="@DrawMarginFrame"
+                Series="@Series">
+
+</CartesianChart>
