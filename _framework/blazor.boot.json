@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "DeBankUI",
   "resources": {
-    "hash": "sha256-BGm+9GzyPpT7JL7oKuAu1OKi99cS+gMP0TxzSBpQle8=",
+    "hash": "sha256-7YAUUfr7B0yNAjKpsNt3R7ylkKr1vCCIjQim9GU7bIY=",
     "jsModuleNative": {
       "dotnet.native.8.0.0.carezwlw4i.js": "sha256-vQxwJgpmjvzavv7JWxT2Ig5KsX9toTIYoHBUM6//5Qw="
     },
@@ -19,7 +19,7 @@
     "assembly": {
       "Blazor.DownloadFileFast.wasm": "sha256-O5XVAQNR880kjWIz030TjcyO9Xo4xdpWPY01sEuiSys=",
       "CsvHelper.wasm": "sha256-lDU7rlMVd75pEG6FvGjcsp5ZYOs97VGGfZgKttNSKRg=",
-      "DeBankUI.wasm": "sha256-VQjdLT5yApp9B06yojmAR6dyclC2kEC8Qx4xQMMhLfk=",
+      "DeBankUI.wasm": "sha256-UcrcmfYfDTF/yR405Z3VpE8pXVZC9E3eQmS1mhj4VSs=",
       "HarfBuzzSharp.wasm": "sha256-Q5Q8B0M2ujBiGZbL339RmqjmYZvKiCqgN1AlSaeSrQc=",
       "LiveChartsCore.SkiaSharpView.Blazor.wasm": "sha256-l7S/zNycIM1Qb6qIO+xCGg6o9Oq8wR4NmylaVOvG8HY=",
       "LiveChartsCore.SkiaSharpView.wasm": "sha256-LY+MuJUsQwEyI39ebiqCZ5R3ceUMMRWk9bu0Dp7iqI4=",
