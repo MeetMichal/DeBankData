@@ -26,7 +26,7 @@ jobs:
               run: dotnet publish DeBankUI/DeBankUI.csproj -c Debug -o release --nologo
 
             - name: Change base-tag in index.html
-              run: sed -i 's/<base href="\/" \/>/<base href="\/DeBankData\/" \/>/g' release/wwwroot/index.html
+              run: sed -i 's/<base href="\/" \/>/<base href="\/JustStats\/" \/>/g' release/wwwroot/index.html
 
             - name: copy index.html to 404.html
               run: cp release/wwwroot/index.html release/wwwroot/404.html
