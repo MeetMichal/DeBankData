@@ -1,9 +1,9 @@
 {
   "mainAssemblyName": "DeBankUI",
   "resources": {
-    "hash": "sha256-fn64Vwp41xI0Mp0xem08dbJyug778f47UYH7fqDK0ZE=",
+    "hash": "sha256-BGm+9GzyPpT7JL7oKuAu1OKi99cS+gMP0TxzSBpQle8=",
     "jsModuleNative": {
-      "dotnet.native.8.0.0.jiqo3h8b7z.js": "sha256-vQxwJgpmjvzavv7JWxT2Ig5KsX9toTIYoHBUM6//5Qw="
+      "dotnet.native.8.0.0.carezwlw4i.js": "sha256-vQxwJgpmjvzavv7JWxT2Ig5KsX9toTIYoHBUM6//5Qw="
     },
     "jsModuleRuntime": {
       "dotnet.runtime.8.0.0.yv1mnms20m.js": "sha256-WdSX3HQvnBYF0KJLZoOyHvTzMHetaob6PV0Kn2K+QXw="
@@ -19,8 +19,8 @@
     "assembly": {
       "Blazor.DownloadFileFast.wasm": "sha256-O5XVAQNR880kjWIz030TjcyO9Xo4xdpWPY01sEuiSys=",
       "CsvHelper.wasm": "sha256-lDU7rlMVd75pEG6FvGjcsp5ZYOs97VGGfZgKttNSKRg=",
-      "DeBankUI.wasm": "sha256-ql8w0Zd4ES0yF5zfQhfv0kNQeApp/KPYB3sEQdakI/4=",
-      "HarfBuzzSharp.wasm": "sha256-HyH9RBWiBI22p28p7hqT8WNLgyD0Gi++GFfmA71z7uQ=",
+      "DeBankUI.wasm": "sha256-VQjdLT5yApp9B06yojmAR6dyclC2kEC8Qx4xQMMhLfk=",
+      "HarfBuzzSharp.wasm": "sha256-Q5Q8B0M2ujBiGZbL339RmqjmYZvKiCqgN1AlSaeSrQc=",
       "LiveChartsCore.SkiaSharpView.Blazor.wasm": "sha256-l7S/zNycIM1Qb6qIO+xCGg6o9Oq8wR4NmylaVOvG8HY=",
       "LiveChartsCore.SkiaSharpView.wasm": "sha256-LY+MuJUsQwEyI39ebiqCZ5R3ceUMMRWk9bu0Dp7iqI4=",
       "LiveChartsCore.wasm": "sha256-te15Xm2Caa/zc8X0heU0J4bHla1XLpkbN6s2wjabQ4A=",
@@ -45,7 +45,7 @@
       "MudBlazor.wasm": "sha256-kHnHBlnBT4YRDmNWu9z1oC3a1MhFwaQiI7O6CIalolg=",
       "SkiaSharp.HarfBuzz.wasm": "sha256-t3xyO05X9FNIUTiAyUfklCk7XKzlcPuxiMnTIY4LZCI=",
       "SkiaSharp.Views.Blazor.wasm": "sha256-MEWrrc8eNov3JvEY74cZUyuNaKEDLFxUUdjF97574zE=",
-      "SkiaSharp.wasm": "sha256-5PerH3rK811lMrBfW3a7jtHz0DlgI5lovolILfZby34=",
+      "SkiaSharp.wasm": "sha256-zI/TsrxRRbSSPfJHZIIkgCyxzgchR9BUTIUnbUfj6uE=",
       "System.Collections.Concurrent.wasm": "sha256-fKYYlFlu3uFuxFf11VcruBVMrvn1evGozYeRSlClNMk=",
       "System.Collections.NonGeneric.wasm": "sha256-V5hsuDKd2X/I7Dh3bvicmpeoeJhMlx+ZD7ACUJ0Lifo=",
       "System.Collections.Specialized.wasm": "sha256-6irunJX0FLzgSmYW/NEj5QWe5xZxFjg4kq/ezx3tGcI=",
