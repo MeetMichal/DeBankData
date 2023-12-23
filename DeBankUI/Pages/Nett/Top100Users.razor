@@ -1,0 +1,87 @@
+﻿@using DeBankUI.Components;
+@using DeBankUI.Shared.Nett;
+@using LiveChartsCore.SkiaSharpView.Blazor
+@page "/nett/top-100"
+
+
+<MudGrid>
+    <MudItem xs="12">
+        <AboutNett />
+    </MudItem>
+    <MudItem xs="12">
+        <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+             <MudCardHeader>
+                 <CardHeaderContent>
+                     <MudStack Justify="Justify.SpaceAround" Row=true>
+                         <MudText Typo="Typo.h6">Snapshot of TOP 100 DeBank users</MudText>
+                     </MudStack>
+                 </CardHeaderContent>
+             </MudCardHeader>
+             <MudCardContent>
+                 <MudDataGrid Items="@UserRanks">
+                     <Columns>
+                         <PropertyColumn Property="x => x.Rank" Title="Rank" />
+                         <PropertyColumn Property="x => x.Web3Id" Title="Web3 ID" />
+                         <PropertyColumn Property="x => x.Followers" Title="Followers" />
+                         <PropertyColumn Property="x => x.Trust" Title="Trusts" />
+                         <PropertyColumn Property="x => x.Trust7d" Title="Trusts last week" />
+                         <PropertyColumn Property="x => x.Contribution" Title="Contribution [$]" />
+                         <PropertyColumn Property="x => x.SybilsMark" Title="Sybil marks" />
+                         <PropertyColumn Property="x => x.NotSybilsMark" Title="Not-Sybil marks" />
+                     </Columns>
+                 </MudDataGrid>
+             </MudCardContent>
+             <MudCardActions>
+                 <MudButton StartIcon="@Icons.Material.Filled.FileDownload" Class="rounded-0" Variant="Variant.Outlined" OnClick="@(async () => await DownloadData("Top100.csv"))" Color="Color.Primary">Get data</MudButton>
+             </MudCardActions>
+         </MudCard>
+     </MudItem>
+     <MudItem xs="12" xl="6">
+         <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+             <MudCardHeader>
+                 <CardHeaderContent>
+                     <MudStack Justify="Justify.SpaceAround" Row=true>
+                         <MudText Typo="Typo.h6">Top 10 by balance</MudText>
+                     </MudStack>
+                 </CardHeaderContent>
+             </MudCardHeader>
+             <MudCardContent style="height:400px">
+                 <BalanceChart UserRanks="UserRanks">
+
+                 </BalanceChart>
+             </MudCardContent>
+         </MudCard>
+     </MudItem>
+          <MudItem xs="12" xl="6">
+         <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+             <MudCardHeader>
+                 <CardHeaderContent>
+                     <MudStack Justify="Justify.SpaceAround" Row=true>
+                         <MudText Typo="Typo.h6">Top 10 by trusts</MudText>
+                     </MudStack>
+                 </CardHeaderContent>
+             </MudCardHeader>
+             <MudCardContent style="height:400px">
+                 <TrustsChart UserRanks="UserRanks">
+
+                 </TrustsChart>
+             </MudCardContent>
+         </MudCard>
+     </MudItem>
+          <MudItem xs="12" xl="6">
+         <MudCard Outlined Square Style="background: var(--mud-palette-background-grey)">
+             <MudCardHeader>
+                 <CardHeaderContent>
+                     <MudStack Justify="Justify.SpaceAround" Row=true>
+                         <MudText Typo="Typo.h6">Top 10 by followers</MudText>
+                     </MudStack>
+                 </CardHeaderContent>
+             </MudCardHeader>
+             <MudCardContent style="height:400px">
+                 <FollowersChart UserRanks="UserRanks">
+
+                 </FollowersChart>
+             </MudCardContent>
+         </MudCard>
+     </MudItem>
+ </MudGrid>

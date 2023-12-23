@@ -18,11 +18,23 @@
                 <MudNavLink Href="michal/lucky-draws">Lucky Draws</MudNavLink>
                 <MudNavLink Href="michal/stream-activity">Stream Activity</MudNavLink>
                 <MudNavLink Href="michal/top-deposits">TOP deposits</MudNavLink>
-                <MudNavLink Href="michal/other-data">Other data</MudNavLink>
+@*                 <MudNavLink Href="michal/other-data">Other data</MudNavLink>
+ *@            </MudNavGroup>
+            <MudNavGroup Icon="@NettProfile" Title="nett" Expanded="true">
+                <MudNavLink Href="nett/top-100">TOP 100</MudNavLink>
             </MudNavGroup>
         </MudNavMenu>
     </MudDrawer>
-    <MudMainContent Class="mt-16 px-16">
-        @Body
-    </MudMainContent>
+    <MudBreakpointProvider>
+        <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
+            <MudMainContent Class="mt-16 px-16">
+                @Body
+            </MudMainContent>
+        </MudHidden>
+        <MudHidden Breakpoint="Breakpoint.SmAndDown" Invert="true">
+            <MudMainContent>
+                Sorry, this app is not optimized for mobile devices. Please use a desktop browser.
+            </MudMainContent>
+        </MudHidden>
+    </MudBreakpointProvider>
 </MudLayout>
