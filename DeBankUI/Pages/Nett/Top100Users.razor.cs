@@ -1,9 +1,10 @@
-﻿using Blazor.DownloadFileFast.Interfaces;
+﻿using BlazorDownloadFile;
 using DeBankUI.Components;
 using DeBankUI.Data;
 using DeBankUI.Model;
 using DeBankUI.Utils;
 using Microsoft.AspNetCore.Components;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DeBankUI.Pages.Nett
 {
@@ -25,7 +26,7 @@ namespace DeBankUI.Pages.Nett
         public async Task DownloadData(string title)
         {
             var stream = await HttpClient.GetStreamAsync("top100.csv");
-            await BlazorDownloadFileService.DownloadFileAsync(title, stream.ReadFully());
+            await BlazorDownloadFileService.DownloadFile(title, stream.ReadFully(), "application/octet-stream");
         }
     }
 }

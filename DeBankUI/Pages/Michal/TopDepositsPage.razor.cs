@@ -7,7 +7,6 @@ using static MudBlazor.Colors;
 using SkiaSharp;
 using DeBankUI.Utils;
 using DeBankUI.Components;
-using Blazor.DownloadFileFast.Interfaces;
 using Microsoft.AspNetCore.Components;
 using DeBankUI.Shared.Michal;
 

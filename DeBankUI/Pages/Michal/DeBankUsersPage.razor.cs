@@ -7,9 +7,9 @@ using static MudBlazor.Colors;
 using SkiaSharp;
 using DeBankUI.Utils;
 using DeBankUI.Components;
-using Blazor.DownloadFileFast.Interfaces;
 using Microsoft.AspNetCore.Components;
 using DeBankUI.Shared.Michal;
+using BlazorDownloadFile;
 
 namespace DeBankUI.Pages.Michal
 {
@@ -24,8 +24,8 @@ namespace DeBankUI.Pages.Michal
 
         public async Task DownloadChartData(BaseChartComponent baseComponent, string title)
         {
-            var data = baseComponent.DownloadChartData();
-            await BlazorDownloadFileService.DownloadFileAsync(title, data);
+            byte[] data = baseComponent.DownloadChartData();
+            await BlazorDownloadFileService.DownloadFile(title, data, "application/octet-stream");
         }
     }
 }
