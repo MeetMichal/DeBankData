@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import DeBankUsers from './pages/michal/DeBankUsers';
 import Top100Users from './pages/nett/Top100Users';
@@ -8,8 +8,6 @@ import StreamActivity from './pages/michal/StreamActivity';
 import TopDepositors from './pages/michal/TopDepositors';
 import Snapshots from './pages/debank/Snapshots';
 import WelcomePage from './pages/WelcomePage';
-
-const drawerWidth = 200;
 
 export default function AppRoutes() {
   return (

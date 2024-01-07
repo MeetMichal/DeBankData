@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -17,7 +17,7 @@ export default function AboutNett() {
         />
         <CardContent>
           <Typography variant="body2">
-            All snapshot data are available under link: <a>https://github.com/DeBankDeFi/web3-data</a>
+            All snapshot data are available under <a href="https://github.com/DeBankDeFi/web3-data">LINK</a>
           </Typography>
         </CardContent>
         <CardActions>

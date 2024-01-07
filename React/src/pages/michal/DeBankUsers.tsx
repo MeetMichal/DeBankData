@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import React, {useEffect, useState} from 'react';
 import AboutMichal from '../../shared/AboutMichal';
 import { Grid } from '@mui/material';

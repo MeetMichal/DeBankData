@@ -1,17 +1,12 @@
-import Box from '@mui/material/Box';
 import React, {useState, useEffect} from 'react';
 import { RewardPoolDailyStats } from '../../models/RewardPoolDailyStats';
 import { RewardPoolsPrizeHistogram } from '../../models/RewardPoolsPrizeHistogram';
 import { RewardPoolsEarnersHistogram } from '../../models/RewardPoolsEarnersHistogram';
 import AboutMichal from '../../shared/AboutMichal';
 import { getData } from '../../services/CsvUtils';
-import { Button, Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import {indigo, red} from '@mui/material/colors'
-import DownlaodIcon from '@mui/icons-material/FileDownload'
-import ImageIcon from '@mui/icons-material/Image'
-import domtoimage from 'dom-to-image';
-import fileDownload from "js-file-download";
-import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import moment from 'moment';
 import ChartContainer from '../../shared/ChartContainer';
 

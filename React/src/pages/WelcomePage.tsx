@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, Typography } from '@mui/material';
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
 
 export default function Snapshots() {  

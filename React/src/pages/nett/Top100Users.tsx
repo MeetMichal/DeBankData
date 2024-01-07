@@ -7,7 +7,6 @@ import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import DownlaodIcon from '@mui/icons-material/FileDownload';
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { LineChart, Line,CartesianGrid, ResponsiveContainer, Scatter, ScatterChart, Tooltip, XAxis, YAxis } from 'recharts';
 
 export default function Top100Users() {
   const [usersRank, setUsersRank] = useState<UserRank[]>([]);
@@ -65,7 +64,7 @@ export default function Top100Users() {
               borderColor: 'grey.400'
             }} 
             variant={isDesktop ? "h5" : "body1"}>
-            Top 100 users
+            Top 100 users (snapshot: 31.12.2023)
           </Typography>
           <DataGrid
             sx={{

@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react';
 import AboutMichal from '../../shared/AboutMichal';
 import { Button, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import { UserRank } from '../../models/UserRank';
 import { getData } from '../../services/CsvUtils';
 import DownlaodIcon from '@mui/icons-material/FileDownload';
 import { UserSpendings } from '../../models/UserSpendings';
