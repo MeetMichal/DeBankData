@@ -66,27 +66,27 @@ export default function Navigation() {
           </ListItemButton>
           <Collapse in={isMichalListOpen} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItemButton href='/michal/debank-users'>
+              <ListItemButton href='#/michal/debank-users'>
                 <ListItemIcon sx={{minWidth:"32px"}}>
                 </ListItemIcon>
                 <ListItemText primary="DeBank users" />
               </ListItemButton>
-              <ListItemButton href='/michal/reward-pools'>
+              <ListItemButton href='#/michal/reward-pools'>
                 <ListItemIcon sx={{minWidth:"32px"}}>
                 </ListItemIcon>
                 <ListItemText primary="Reward Pools" />
               </ListItemButton>
-              <ListItemButton href='/michal/lucky-draws'>
+              <ListItemButton href='#/michal/lucky-draws'>
                 <ListItemIcon sx={{minWidth:"32px"}}>
                 </ListItemIcon>
                 <ListItemText primary="Lucky Draws" />
               </ListItemButton>
-              <ListItemButton href='/michal/stream-activity'>
+              <ListItemButton href='#/michal/stream-activity'>
                 <ListItemIcon sx={{minWidth:"32px"}}>
                 </ListItemIcon>
                 <ListItemText primary="Stream Activity" />
               </ListItemButton>
-              <ListItemButton href='/michal/top-depositors'>
+              <ListItemButton href='#/michal/top-depositors'>
                 <ListItemIcon sx={{minWidth:"32px"}}>
                 </ListItemIcon>
                 <ListItemText primary="TOP depositors" />
@@ -138,7 +138,7 @@ export default function Navigation() {
           </ListItemButton>
           <Collapse in={isNettListOpen} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItemButton href='/nett/top-100'>
+              <ListItemButton href='#/nett/top-100'>
                 <ListItemIcon sx={{minWidth:"32px"}}>
                 </ListItemIcon>
                 <ListItemText primary="TOP 100" />
@@ -166,7 +166,7 @@ export default function Navigation() {
           </ListItemButton>
           <Collapse in={isDeBankDataOpen} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItemButton href='/debank/snapshot'>
+              <ListItemButton href='#/debank/snapshot'>
                 <ListItemIcon sx={{minWidth:"32px"}}>
                 </ListItemIcon>
                 <ListItemText primary="Snapshots" />
