@@ -61,7 +61,7 @@ export default function ChartComponent(props: PropsWithChildren<ChartComponentPr
           </Box>
           {isDesktop ? 
           <>
-            <Button href={props.dataUrl} target="_blank" startIcon={<DownlaodIcon/>} sx={{borderRadius:0, marginRight:1}} variant='outlined' size="small">
+            <Button href={process.env.PUBLIC_URL + props.dataUrl} target="_blank" startIcon={<DownlaodIcon/>} sx={{borderRadius:0, marginRight:1}} variant='outlined' size="small">
                   GET DATA
             </Button>
             <Button onClick={() => handleSaveClick(props.chartId, props.chartId+".png")} startIcon={<ImageIcon/>} sx={{borderRadius:0}} variant='outlined' size="small">
