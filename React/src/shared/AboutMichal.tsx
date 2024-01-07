@@ -11,7 +11,7 @@ export default function AboutMichal() {
     return (
       <Card square elevation={0} sx={{backgroundColor: "grey.100", border:1, borderColor: 'grey.400' }} >
         <CardHeader
-            avatar={<Avatar src="/Michal.png"/>}
+            avatar={<Avatar src={process.env.PUBLIC_URL+"/Michal.png"}/>}
             title="Michal"
             titleTypographyProps={{variant:"h5"}}
         />

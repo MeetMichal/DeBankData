@@ -11,7 +11,7 @@ export default function AboutNett() {
     return (
       <Card square elevation={0} sx={{backgroundColor: "grey.100", border:1, borderColor: 'grey.400' }} >
         <CardHeader
-            avatar={<Avatar src="/Nett.png"/>}
+            avatar={<Avatar src={process.env.PUBLIC_URL+"/Nett.png"}/>}
             title="nett"
             titleTypographyProps={{variant:"h5"}}
         />
