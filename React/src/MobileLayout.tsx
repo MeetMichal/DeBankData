@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -22,6 +22,18 @@ function App() {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      setIsDrawerOpen(false);
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+        window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []); 
+  
   return (
     <Box sx={{display:"flex"}}>
       <AppBar sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
@@ -46,6 +58,7 @@ function App() {
         sx={{display: isDrawerOpen ? "inherit" : "none", flexShrink:0}}
         anchor='bottom'
         open={isDrawerOpen}
+        ModalProps={{ onBackdropClick: toggleDrawer }}
         PaperProps={{sx: {width: "100%"}}}> 
         <Navigation />
       </Drawer>
